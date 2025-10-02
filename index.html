@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Dinâmicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Glossário Interativo</h1>
+
+        <div class="card-area">
+            <div id="flashcard" class="flashcard">
+                <div class="card-face card-front">
+                    <p id="card-term">Clique em Sortear!</p>
+                </div>
+                <div class="card-face card-back">
+                    <h2 id="card-definition-title"></h2>
+                    <p id="card-definition"></p>
+                    <a id="card-link" href="#" target="_blank" style="display: none;">Saiba Mais Aqui</a>
+                </div>
+            </div>
+        </div>
+
+        <button id="sortear-btn" disabled>Sortear Novo Card</button>
+        <p id="loading-message">Carregando dados do Glossário...</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
