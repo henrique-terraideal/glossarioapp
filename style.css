@@ -1,0 +1,116 @@
+/* Configurações básicas */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+/* Estilo do Card (Contêiner principal) */
+.card-area {
+    perspective: 1000px; /* Define o contexto 3D para o efeito flip */
+    width: 100%;
+    height: 300px; /* Altura fixa para o card */
+    margin-bottom: 20px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* Permite que os filhos sejam posicionados em 3D */
+    transition: transform 0.6s; /* Transição suave para a virada */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Classe para virar o card (adicionada pelo JavaScript) */
+.flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Estilos das Faces do Card */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde a face quando ela está de costas */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card-front {
+    background-color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.card-back {
+    background-color: #e9ecef;
+    color: #333;
+    transform: rotateY(180deg); /* Vira a face de trás para que fique visível após o flip */
+}
+
+#card-definition-title {
+    margin-top: 0;
+    color: #007bff;
+}
+
+#card-definition {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#card-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Estilo do Botão */
+#sortear-btn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sortear-btn:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+#sortear-btn:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+}
